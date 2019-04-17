@@ -1,0 +1,32 @@
+{
+  "name": "node-api-server-boilerplate",
+  "version": "1.0.0",
+  "description": "A boilerplate for creating a node API server. Npm-run-all allows webpack to run in parallel with nodemon. This lets webpack watch changes and rebuild the development bundle as nodemon then restarts the server with the new changes. Eslint is set to node/es8 and some personal styles. Feel free to changes these. Webpack-karma-jasmine is ready to use for testing.",
+  "main": "server.js",
+  "scripts": {
+    "test": "karma start",
+    "nodemon": "nodemon ./dist/server.bundle.js",
+    "watch:server": "webpack --watch --mode=development",
+    "start": "run-p nodemon watch:server",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "Chad Pjontek",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-promise-router": "^3.0.3",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^2.0.1",
+    "eslint": "^5.16.0",
+    "eslint-loader": "^2.1.2",
+    "nodemon": "^1.18.11",
+    "npm-run-all": "^4.1.5",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0",
+    "webpack-karma-jasmine": "^3.0.6",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
