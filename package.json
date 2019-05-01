@@ -1,7 +1,7 @@
 {
-  "name": "node-api-server-boilerplate",
+  "name": "node-user-authentication-boilerplate",
   "version": "1.0.0",
-  "description": "A boilerplate for creating a node API server. Npm-run-all allows webpack to run in parallel with nodemon. This lets webpack watch changes and rebuild the development bundle as nodemon then restarts the server with the new changes. Eslint is set to node/es8 and some personal styles. Feel free to changes these. Webpack-karma-jasmine is ready to use for testing.",
+  "description": "A boilerplate for creating a node API server with user authentication. Includes email verification and json web tokens to authenticate protected routes.",
   "main": "server.js",
   "scripts": {
     "test": "karma start",
@@ -14,9 +14,16 @@
   "author": "Chad Pjontek",
   "license": "MIT",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "express-promise-router": "^3.0.3",
-    "morgan": "^1.9.1"
+    "helmet": "^3.16.0",
+    "joi": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.5.2",
+    "morgan": "^1.9.1",
+    "nodemailer": "^6.1.1"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^2.0.1",

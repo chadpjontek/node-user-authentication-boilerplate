@@ -1,17 +1,17 @@
-# node-api-server-boilerplate
+# node-user-authentication-boilerplate
 
-### _A node API server boilerplate with linting, testing, and automation for development and production built in._
+### _A boilerplate for creating a node API server with user authentication. Includes email verification and json web tokens to authenticate protected routes._
 
-The purpose of this boilerplate is for myself and others to quickly get started with a node API server by including the common tools needed for development.
+The purpose of this boilerplate is for myself and others to quickly get started with a node API server with user authentication and other commonly used tools.
 
 
 ---
 
 ***Features:***
-* **Npm-run-all** allows **webpack** to run in parallel with **nodemon**. This lets webpack watch for changes and rebuild the development bundle as nodemon then restarts the server with the new changes.
-* **Eslint** is set to node,es8 and some personal styles. Feel free to changes these in `.eslintrc.json`.
-* **webpack-karma-jasmine** is ready to use for testing.
-
+* Includes the all the benefits of [**node-api-sever-boilerplate**](https://github.com/chadpjontek/node-api-server-boilerplate)
+* Common user authentication routes, controllers, and validation schemas are already setup and can be changed to your needs.
+* User **email verification** and **password recovery** email functions are ready to be personalized.
+* **Json Web Tokens** are used for authentication. Expiration times can be changed to your needs. Just add your own routes and protect them with the `tokenAuth` middleware
 
 ---
 

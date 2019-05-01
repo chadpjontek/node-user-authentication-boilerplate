@@ -64,7 +64,7 @@ module.exports = function (config) {
     },
 
     /* karma-webpack config
-       pass your webpack configuration for karma
+       pass your webpack config for karma
        add `babel-loader` to the webpack configuration to make the ES6+ code readable to the browser */
     webpack: {
       module: {
