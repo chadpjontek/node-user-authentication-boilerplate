@@ -67,11 +67,11 @@ const verify = async (req, res) => {
       await sendEmailVerification(foundUser.email, username, foundUser.verificationCode.value);
       return res.status(401).json({ error: 'The verification code has expired. A new code has been sent to your email.' });
     }
-    // Update user as being verified
+    // Update user as being verified and delete codes
     foundUser.isVerified = true;
+    foundUser.verificationCode = { value: null, createdAt: null };
+    foundUser.activationHash = null;
     await foundUser.save();
-    //TODO: delete codes
-
     // Respond with verification success message
     res.status(200).json({ message: 'Your account has been verified. You can now log in.' });
   } catch (error) {
@@ -188,8 +188,6 @@ const changePassword = async (req, res) => {
     };
     // Update user password
     await updatePassword(foundUser, newPassword);
-    //TODO: delete codes
-
     return res.status(200).json({ msg: 'New password set' });
   } catch (error) {
     console.log(error);
@@ -215,8 +213,11 @@ const setNewPassword = async (req, res) => {
     if (!isMatch) {
       return res.status(401).json({ error: 'The recovery code does not match.' });
     };
-    // Update the user's password
+    // Update the user's password and delete codes
     await updatePassword(foundUser, newPassword);
+    foundUser.pwRecoveryCode = { value: null, createdAt: null };
+    foundUser.pwRecoveryHash = null;
+    await foundUser.save();
     // Send response to setNewPassword
     res.status(200).json({ msg: 'Your new password has been set.' });
   } catch (error) {
