@@ -28,7 +28,7 @@ const signUp = async (req, res) => {
     // Respond with success message
     res.status(200).json({ message: 'Your account has been created. Please verify it by clicking the activation link that has been sent to your email.' });
   } catch (error) {
-    console.log(error);
+    throw new Error(error);
   }
 };
 
@@ -75,7 +75,7 @@ const verify = async (req, res) => {
     // Respond with verification success message
     res.status(200).json({ message: 'Your account has been verified. You can now log in.' });
   } catch (error) {
-    console.log(error);
+    throw new Error(error);
   }
 };
 
@@ -107,7 +107,7 @@ const signIn = async (req, res) => {
     const token = signToken(foundUser);
     res.status(200).json({ token });
   } catch (error) {
-    console.log(error);
+    throw new Error(error);
   }
 };
 
@@ -135,7 +135,7 @@ const forgotPassword = async (req, res) => {
     // Respond with verification success message
     res.status(200).json({ message: 'An email has been sent to the address you provided with instructions to reset your password.' });
   } catch (error) {
-    console.log(error);
+    throw new Error(error);
   }
 };
 
@@ -162,7 +162,7 @@ const passwordRecovery = async (req, res) => {
     // Send response
     res.status(200).json({ msg: 'You can now create a new password', username, code });
   } catch (error) {
-    console.log(error);
+    throw new Error(error);
   }
 };
 
@@ -190,7 +190,7 @@ const changePassword = async (req, res) => {
     await updatePassword(foundUser, newPassword);
     return res.status(200).json({ msg: 'New password set' });
   } catch (error) {
-    console.log(error);
+    throw new Error(error);
   }
 };
 
@@ -221,7 +221,7 @@ const setNewPassword = async (req, res) => {
     // Send response to setNewPassword
     res.status(200).json({ msg: 'Your new password has been set.' });
   } catch (error) {
-    console.log(error);
+    throw new Error(error);
   }
 };
 
@@ -239,7 +239,7 @@ const account = async (req, res) => {
     }
     res.status(200).json({ foundUser });
   } catch (error) {
-    console.log(error);
+    throw new Error(error);
   }
 };
 
