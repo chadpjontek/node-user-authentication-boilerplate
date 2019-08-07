@@ -22,7 +22,7 @@ const sendEmailVerification = async (email, username, code) => {
       }
     });
     // Create HTML to send in email
-    const verifyLink = `${PROTOCOL}://${DOMAIN}:${process.env.PORT}/users/verify/${username}/${code}`;
+    const verifyLink = `${PROTOCOL}://${DOMAIN}:${process.env.PORT}/api/users/email-verification/${username}/${code}`;
     const htmlBody = `
 <!DOCTYPE html>
 <html lang="en">
@@ -88,7 +88,7 @@ const sendPasswordRecoveryEmail = async (email, username, code) => {
     });
 
     // Create HTML to send in email
-    const pwResetLink = `${PROTOCOL}://${DOMAIN}:${process.env.PORT}/users/passwordrecovery/${username}/${code}`;
+    const pwResetLink = `${PROTOCOL}://${DOMAIN}:${process.env.PORT}/api/users/password-recovery/${username}/${code}`;
     const htmlBody = `
 <!DOCTYPE html>
 <html lang="en">

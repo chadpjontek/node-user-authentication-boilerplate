@@ -112,11 +112,11 @@ const signIn = async (req, res) => {
 };
 
 /**
- * Forgot password logic
+ * Password recovery logic
  * @param {Object} req - HTTP request object
  * @param {Object} res - HTTP response object
  */
-const forgotPassword = async (req, res) => {
+const passwordRecovery = async (req, res) => {
   try {
     const { email } = req.body;
     // Check if there is an account with this email
@@ -140,11 +140,11 @@ const forgotPassword = async (req, res) => {
 };
 
 /**
- * Password recovery logic
+ * Validate password recovery logic
  * @param {Object} req - HTTP request object
  * @param {Object} res - HTTP response object
  */
-const passwordRecovery = async (req, res) => {
+const validatePwRecovery = async (req, res) => {
   try {
     // Check username
     const { username, code } = req.params;
@@ -247,8 +247,8 @@ module.exports = {
   signUp,
   verify,
   signIn,
-  forgotPassword,
   passwordRecovery,
+  validatePwRecovery,
   changePassword,
   setNewPassword,
   account

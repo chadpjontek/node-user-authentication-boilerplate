@@ -15,8 +15,8 @@ const schemas = {
     email: Joi.string().email().required(),
     password: Joi.string().required()
   }),
-  /** Forgot password validation schema */
-  forgotPassword: Joi.object().keys({
+  /** Password recovery validation schema */
+  passwordRecovery: Joi.object().keys({
     email: Joi.string().email().required()
   }),
   /** Change password validation schema */
