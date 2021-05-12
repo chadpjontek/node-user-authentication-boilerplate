@@ -24,7 +24,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.5.2",
     "morgan": "^1.9.1",
-    "nodemailer": "^6.1.1"
+    "nodemailer": "^6.4.16"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^2.0.1",
